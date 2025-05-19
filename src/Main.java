@@ -1,31 +1,58 @@
 package src;
 
 public class Main {
+
     public static void main(String[] args) {
-        // Create vertices
-        Vertex<String> a = new Vertex<>("A");
-        Vertex<String> b = new Vertex<>("B");
-        Vertex<String> c = new Vertex<>("C");
-        Vertex<String> d = new Vertex<>("D");
+        WeightedGraph<String> weightedGraph = new WeightedGraph<>(true);
+        fillWithWeights(weightedGraph);
 
-        // Create graph
-        WeightedGraph<String> graph = new WeightedGraph<>();
+        System.out.println("Dijkstra:");
+        Search<String> djk = new DijkstraSearch<>(weightedGraph, "Almaty");
+        outputPath(djk, "Kyzylorda");
 
-        // Add vertices to graph
-        graph.addVertex(a);
-        graph.addVertex(b);
-        graph.addVertex(c);
-        graph.addVertex(d);
 
-        // Add edges with weights
-        graph.addEdge(a, b, 1); // A -> B
-        graph.addEdge(a, c, 1); // A -> C
-        graph.addEdge(b, d, 1); // B -> D
-        graph.addEdge(c, d, 1); // C -> D
+        System.out.println("--------------------------------");
 
-        // Perform BFS traversal from vertex A
-        System.out.print("BFS traversal starting from A: ");
-        graph.bfs(a);
+        UnweightedGraph<String> graph = new UnweightedGraph<>(true);
+        fillWithoutWeights(graph);
+
+        System.out.println("DFS:");
+        Search<String> dfs = new DepthFirstSearch<>(graph, "Almaty");
+        outputPath(dfs, "Kyzylorda");
+
+        System.out.println("--------------------------------");
+
+        System.out.println("BFS:");
+        Search<String> bfs = new BreadthFirstSearch<>(graph, "Almaty");
+        outputPath(bfs, "Kyzylorda");
+    }
+
+    public static void fillWithoutWeights(UnweightedGraph<String> graph) {
+        graph.addEdge("Almaty", "Astana"); // 16 - 19
+        graph.addEdge("Shymkent", "Atyrau");
+        graph.addEdge("Atyrau", "Astana");
+        graph.addEdge("Almaty", "Shymkent");
+        graph.addEdge("Shymkent", "Astana");
+        graph.addEdge("Astana", "Kostanay");
+        graph.addEdge("Shymkent", "Kyzylorda");
+    }
+
+    public static void fillWithWeights(WeightedGraph<String> graph) {
+        graph.addEdge("Almaty", "Astana", 2.1);
+        graph.addEdge("Shymkent", "Atyrau", 7.8);
+        graph.addEdge("Atyrau", "Astana", 7.1);
+        graph.addEdge("Almaty", "Shymkent", 7.2);
+        graph.addEdge("Shymkent", "Astana", 3.9);
+        graph.addEdge("Astana", "Kostanay", 3.5);
+        graph.addEdge("Shymkent", "Kyzylorda", 5.4);
+    }
+
+    public static void outputPath(Search<String> search, String key) {
+        for (String v : search.pathTo(key)) {
+            System.out.print(v + " -> ");
+        }
+
+        System.out.println();
     }
 }
 
