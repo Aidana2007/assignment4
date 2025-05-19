@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1577a560-7675-474c-9e68-fd012b9a7f60" name="Changes" comment="implement bfs" />
+    <list default="true" id="1577a560-7675-474c-9e68-fd012b9a7f60" name="Changes" comment="implement BreadthFirstSearch">
+      <change afterPath="$PROJECT_DIR$/src/DijkstraSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BeadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BreadthFirstSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnweightedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnweightedGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WeightedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WeightedGraph.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="3-implement-weightedgraph-class" />
+        <entry key="$PROJECT_DIR$" value="13-implement-breadthfirstsearch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,8 +67,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#8 on 7-implement-bfs",
+    "git-widget-placeholder": "17-implement-dijkstrasearch",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -87,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1747501404712</updated>
-      <workItem from="1747501406021" duration="2889000" />
+      <workItem from="1747501406021" duration="8145000" />
     </task>
     <task id="LOCAL-00001" summary="implement Vertex class">
       <option name="closed" value="true" />
@@ -121,7 +129,39 @@
       <option name="project" value="LOCAL" />
       <updated>1747575206855</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="testing">
+      <option name="closed" value="true" />
+      <created>1747588175749</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747588175749</updated>
+    </task>
+    <task id="LOCAL-00006" summary="implement Search">
+      <option name="closed" value="true" />
+      <created>1747588293856</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747588293856</updated>
+    </task>
+    <task id="LOCAL-00007" summary="implement UnWeightedGraph">
+      <option name="closed" value="true" />
+      <created>1747588923267</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747588923267</updated>
+    </task>
+    <task id="LOCAL-00008" summary="implement BreadthFirstSearch">
+      <option name="closed" value="true" />
+      <created>1747589142664</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747589142664</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +172,10 @@
     <MESSAGE value="implement Edge class" />
     <MESSAGE value="implement WeightedGraph class" />
     <MESSAGE value="implement bfs" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement bfs" />
+    <MESSAGE value="testing" />
+    <MESSAGE value="implement Search" />
+    <MESSAGE value="implement UnWeightedGraph" />
+    <MESSAGE value="implement BreadthFirstSearch" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement BreadthFirstSearch" />
   </component>
 </project>
