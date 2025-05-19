@@ -25,13 +25,16 @@ public class DijkstraSearch<V> extends Search<V> {
             unvisited.remove(closest);
             marked.add(closest);
 
-            for (Vertex<V> neighbor : graph.adjacencyList((Vertex<V>) closest)) {
-                double tentative = getDistance(closest) + edgeWeight(closest, (V) neighbor);
+            Vertex<V> closestVertex = new Vertex<>(closest);
 
-                if (tentative < getDistance((V) neighbor)) {
-                    minDistances.put((V) neighbor, tentative);
-                    edgeTo.put((V) neighbor, closest);
-                    unvisited.add((V) neighbor);
+            for (Vertex<V> neighbor : graph.adjacencyList(closestVertex)) {
+                V neighborValue = neighbor.getValue();
+                double tentative = getDistance(closest) + edgeWeight(closest, neighborValue);
+
+                if (tentative < getDistance(neighborValue)) {
+                    minDistances.put(neighborValue, tentative);
+                    edgeTo.put(neighborValue, closest);
+                    unvisited.add(neighborValue);
                 }
             }
         }
@@ -42,8 +45,8 @@ public class DijkstraSearch<V> extends Search<V> {
     }
 
     private double edgeWeight(V from, V to) {
-        for (Edge<V> edge : graph.getEdges((Vertex<V>) from)) {
-            if (edge.getDestination().equals(to)) {
+        for (Edge<V> edge : graph.getEdges(new Vertex<>(from))) {
+            if (edge.getDestination().getValue().equals(to)) {
                 return edge.getWeight();
             }
         }
@@ -60,3 +63,4 @@ public class DijkstraSearch<V> extends Search<V> {
         return best;
     }
 }
+
